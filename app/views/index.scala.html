@@ -1,0 +1,23 @@
+@(balance: Int)
+
+@main("Welcome to Karata Game") {
+  <h1>Your current balance is @balance</h1>
+
+  <form method="post" action="@routes.GameController.playerGameType">
+    <label>Enter your name</label><br>
+    <label>
+      <input type="text" required name="player_name" value="">
+    </label>
+    <h2>Choose a game type to index</h2>
+    <label>
+      <input type="radio" name="game_type" value="SingleCardGame">
+    </label>
+    <label>Single Card Game</label><br>
+    <label>
+      <input type="radio" name="game_type" value="DoubleCardGame">
+    </label>
+    <label>Double Card Game</label><br>
+
+    <input type="submit" value="Submit"/>
+  </form>
+}

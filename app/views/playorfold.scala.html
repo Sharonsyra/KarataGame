@@ -1,0 +1,13 @@
+@(playerUuid: String, name: String, cards: Seq[String])
+@main("Play Or Fold") {
+    <h1>You are playing @name. Your cards are: @cards.mkString(" and ")</h1>
+
+    <form method="post" action="@routes.GameController.playOrFold(playerUuid)">
+        <h2>Will you Play or Fold???</h2>
+        <input type="radio" name="play_or_fold" value="Play">
+        <label>Play</label><br>
+        <input type="radio" name="play_or_fold" value="Fold">
+        <label>Fold</label><br>
+        <input type="submit" value="Submit"/>
+    </form>
+}
