@@ -16,7 +16,7 @@ object GameSession {
    * @param player2  Player 2
    * @param gameType Game Type
    */
-  def sessionSetup(player1: Player, player2: Player, gameType: GameType): Unit = {
+  def sessionSetup(player1: Player, player2: Player): Unit = {
     player1.pairedPlayer = player2.playerUuid
     player2.pairedPlayer = player1.playerUuid
   }
@@ -64,7 +64,7 @@ object GameSession {
          |""".stripMargin
     )
 
-    sessionSetup(player1 = player1, player2 = player2, gameType = gameType)
+    sessionSetup(player1 = player1, player2 = player2)
 
     assignPlayerDealCards(player1 = player1, player2 = player2, gameType = gameType)
 
